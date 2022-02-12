@@ -10,9 +10,9 @@ import Player from "../components/Player";
 
 const videos = [
   "https://d1utto4bohjv3p.cloudfront.net/test-converted.mp4",
+  "https://d33tbglx0zf09c.cloudfront.net/5e803630-4888-4a2d-a163-b28135644214-1644658890.5965555converted.mp4",
   "https://d1utto4bohjv3p.cloudfront.net/test-converted.mp4",
-  "https://d1utto4bohjv3p.cloudfront.net/test-converted.mp4",
-  "https://d1utto4bohjv3p.cloudfront.net/test-converted.mp4",
+  "https://d33tbglx0zf09c.cloudfront.net/5e803630-4888-4a2d-a163-b28135644214-1644658890.5965555converted.mp4",
 ];
 
 export default function Reels() {
