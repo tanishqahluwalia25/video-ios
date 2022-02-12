@@ -1,30 +1,46 @@
-import React from "react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination, Virtual } from "swiper";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
+import { Swiper } from "swiper/react";
+import { SwiperSlide } from "swiper/react";
+import Player from "../components/Player";
+
+const videos = [
+  "https://d1utto4bohjv3p.cloudfront.net/test-converted.mp4",
+  "https://d1utto4bohjv3p.cloudfront.net/test-converted.mp4",
+  "https://d1utto4bohjv3p.cloudfront.net/test-converted.mp4",
+  "https://d1utto4bohjv3p.cloudfront.net/test-converted.mp4",
+];
 
 export default function Reels() {
-  const videoRef = useRef(null);
-
-  useEffect(() => {
-    if (videoRef) {
-      videoRef?.current?.play();
-    }
-  }, [videoRef]);
+  const [muted, setMuted] = useState(true);
 
   return (
     <>
-      <video
-        ref={videoRef}
+      <Swiper
+        modules={[Pagination]}
+        direction="vertical"
+        pagination={{ clickable: true }}
         style={{
           height: "100vh",
-          width: "100vw",
-          objectFit: "cover",
         }}
-        src="https://d1utto4bohjv3p.cloudfront.net/test-converted.mp4"
-        // autoPlay
-        playsInline
-        muted
-      />
+      >
+        {videos.map((video, index) => (
+          <SwiperSlide
+            key={index}
+            onClick={() => {
+              setMuted(!muted);
+            }}
+          >
+            {({ isActive }) => (
+              <Player src={video} active={isActive} muted={muted} />
+            )}
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </>
   );
 }
