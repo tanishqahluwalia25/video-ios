@@ -7,12 +7,14 @@ import { useRef } from "react";
 import { Swiper } from "swiper/react";
 import { SwiperSlide } from "swiper/react";
 import Player from "../components/Player";
+import Script from "next/script";
 
 const videos = [
-  "https://d1utto4bohjv3p.cloudfront.net/test-converted.mp4",
+  "https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd",
   "https://d33tbglx0zf09c.cloudfront.net/5e803630-4888-4a2d-a163-b28135644214-1644658890.5965555converted.mp4",
-  "https://d1utto4bohjv3p.cloudfront.net/test-converted.mp4",
-  "https://d33tbglx0zf09c.cloudfront.net/5e803630-4888-4a2d-a163-b28135644214-1644658890.5965555converted.mp4",
+  "https://livesim.dashif.org/livesim/chunkdur_1/ato_7/testpic4_8s/Manifest.mpd",
+  "https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd",
+  "https://dash.akamaized.net/dash264/TestCasesUHD/2b/11/MultiRate.mpd",
 ];
 
 export default function Reels() {

@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from "react";
+import Script from "next/script";
 
 export default function Player({ active, src, muted }) {
   const videoRef = useRef(null);
+
   useEffect(() => {
     if (videoRef) {
       if (active) videoRef?.current?.play();
@@ -13,17 +15,21 @@ export default function Player({ active, src, muted }) {
   }, [videoRef, active]);
 
   return (
-    <video
-      ref={videoRef}
-      style={{
-        height: "100vh",
-        width: "100vw",
-        objectFit: "cover",
-      }}
-      src={src}
-      muted={muted}
-      playsInline
-      autoPlay
-    />
+    <>
+      <video
+        data-dashjs-player
+        ref={videoRef}
+        id={"videoPlayer"}
+        style={{
+          height: "100vh",
+          width: "100vw",
+          objectFit: "cover",
+        }}
+        src={src}
+        muted={muted}
+        playsInline
+        autoPlay
+      />
+    </>
   );
 }
