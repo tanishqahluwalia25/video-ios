@@ -14,7 +14,7 @@ export default function Player({ active, src, muted }) {
         video.play();
       });
     }
-  }, [videoRef]);
+  }, [src, videoRef]);
 
   useEffect(() => {
     if (videoRef) {
