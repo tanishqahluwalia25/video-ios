@@ -15,7 +15,7 @@ const videos = [
   "https://d33tbglx0zf09c.cloudfront.net/5e803630-4888-4a2d-a163-b28135644214-1644658890.5965555converted.mp4",
   "https://livesim.dashif.org/livesim/chunkdur_1/ato_7/testpic4_8s/Manifest.mpd",
   "https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd",
-  "https://dash.akamaized.net/dash264/TestCasesUHD/2b/11/MultiRate.mpd",
+  // "https://dash.akamaized.net/dash264/TestCasesUHD/2b/11/MultiRate.mpd",
 ];
 
 export default function ReelsPage() {
