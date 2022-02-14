@@ -41,7 +41,7 @@ export default function Player({ active, src, muted }) {
         muted={muted}
         playsInline
         autoPlay
-        // controls
+        controls
       />
     </>
   );
