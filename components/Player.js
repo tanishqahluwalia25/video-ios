@@ -1,10 +1,20 @@
 import React, { useEffect, useRef } from "react";
-import Script from "next/script";
-
-// import dashjs from "dashjs";
+import Hls from "hls.js";
 
 export default function Player({ active, src, muted }) {
   const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (Hls.isSupported() && videoRef) {
+      const video = videoRef.current;
+      const hls = new Hls();
+      hls.loadSource(src);
+      hls.attachMedia(video);
+      hls.on(Hls.Events.MANIFEST_PARSED, function () {
+        video.play();
+      });
+    }
+  }, [videoRef]);
 
   useEffect(() => {
     if (videoRef) {
@@ -19,7 +29,7 @@ export default function Player({ active, src, muted }) {
   return (
     <>
       <video
-        // data-dashjs-player
+        data-dashjs-player
         ref={videoRef}
         id={"videoPlayer"}
         style={{
@@ -31,7 +41,7 @@ export default function Player({ active, src, muted }) {
         muted={muted}
         playsInline
         autoPlay
-        controls
+        // controls
       />
     </>
   );
