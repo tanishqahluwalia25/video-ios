@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import Script from "next/script";
 
+// import dashjs from "dashjs";
+
 export default function Player({ active, src, muted }) {
   const videoRef = useRef(null);
 
@@ -29,6 +31,7 @@ export default function Player({ active, src, muted }) {
         muted={muted}
         playsInline
         autoPlay
+        controls
       />
     </>
   );
