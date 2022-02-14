@@ -19,7 +19,7 @@ export default function Player({ active, src, muted }) {
   return (
     <>
       <video
-        data-dashjs-player
+        // data-dashjs-player
         ref={videoRef}
         id={"videoPlayer"}
         style={{
