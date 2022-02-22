@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 export default function OTPPage() {
   const [code, setCode] = useState("");
-  autoReadSMS((cod) => {
-    // alert(c);
+  autoReadSMS((c) => {
+    alert(c);
     setCode(c);
   });
 
@@ -45,21 +45,16 @@ function autoReadSMS(cb) {
                 }
               })
               .catch((e) => {
-                alert(e.message);
+                alert("error" + e.message);
                 console.log(e);
-              })
-              .finally((onFinally) => {
-                if (onFinally) {
-                  alert("final");
-                }
               });
           } catch (e) {
-            alert(e.message);
+            alert("error" + e.message);
             return;
           }
         }
       } catch (err) {
-        console.log(err);
+        alert("error" + e.message);
       }
       alert("hiii");
     }
