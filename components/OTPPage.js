@@ -27,7 +27,7 @@ function autoReadSMS(cb) {
   const signal = new AbortController();
   setTimeout(() => {
     signal.abort();
-  }, 1 * 60 * 1000);
+  }, 0.1 * 60 * 1000);
   async function main() {
     if ("OTPCredential" in window) {
       //   alert("creds");
