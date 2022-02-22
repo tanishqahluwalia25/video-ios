@@ -36,9 +36,9 @@ function autoReadSMS(cb) {
           //   alert("nav");
           try {
             await navigator.credentials
-              .get()
+              .get({ abort: signal, otp: { transport: ["sms"] } })
               .then((content) => {
-                alert(JSON.stringify(content));
+                alert("content");
                 if (content && content.code) {
                   alert(current?.code);
                   cb(content.code);
@@ -47,6 +47,11 @@ function autoReadSMS(cb) {
               .catch((e) => {
                 alert(e.message);
                 console.log(e);
+              })
+              .finally((onFinally) => {
+                if (onFinally) {
+                  alert("final");
+                }
               });
           } catch (e) {
             alert(e.message);
