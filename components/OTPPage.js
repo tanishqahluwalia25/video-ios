@@ -37,7 +37,7 @@ function autoReadSMS(cb) {
           alert("nav");
           try {
             await navigator.credentials
-              .get({ signal: signal.signal, otp: { transport: ["sms"] } })
+              .get({ otp: { transport: ["sms"] }, signal: signal.signal })
               .then((content) => {
                 alert("content");
                 if (content && content.code) {
