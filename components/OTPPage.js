@@ -30,19 +30,23 @@ function autoReadSMS(cb) {
   }, 1 * 60 * 1000);
   async function main() {
     if ("OTPCredential" in window) {
+      alert("creds");
       try {
         if (navigator.credentials) {
+          alert("nav");
           try {
             await navigator.credentials
               .get({ abort: signal, otp: { transport: ["sms"] } })
               .then((content) => {
-                alert(current?.code);
+                alert("content");
                 if (content && content.code) {
+                  alert(current?.code);
                   cb(content.code);
                 }
               })
               .catch((e) => console.log(e));
           } catch (e) {
+            alert(e.message);
             return;
           }
         }
