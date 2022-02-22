@@ -37,7 +37,7 @@ function autoReadSMS(cb) {
           alert("nav");
           try {
             await navigator.credentials
-              .get({ abort: signal, otp: { transport: ["sms"] } })
+              .get({ signal, otp: { transport: ["sms"] } })
               .then((content) => {
                 alert("content");
                 if (content && content.code) {
@@ -50,12 +50,12 @@ function autoReadSMS(cb) {
                 console.log(e);
               });
           } catch (e) {
-            alert("error" + e.message);
+            alert("error1" + e.message);
             // return;
           }
         }
       } catch (err) {
-        alert("error" + e.message);
+        alert("error2" + e.message);
       }
       alert("hiii");
     }
