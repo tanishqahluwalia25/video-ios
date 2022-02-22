@@ -44,7 +44,10 @@ function autoReadSMS(cb) {
                   cb(content.code);
                 }
               })
-              .catch((e) => console.log(e));
+              .catch((e) => {
+                alert(e.message);
+                console.log(e);
+              });
           } catch (e) {
             alert(e.message);
             return;
