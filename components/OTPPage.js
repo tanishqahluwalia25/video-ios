@@ -33,10 +33,10 @@ function autoReadSMS(cb) {
       //   alert("creds");
       try {
         if (navigator.credentials) {
-          //   alert("nav");
+          alert("nav");
           try {
             await navigator.credentials
-              .get({ abort: signal, otp: { transport: ["sms"] } })
+              .get({ otp: { transport: ["sms"] } })
               .then((content) => {
                 alert("content");
                 if (content && content.code) {
@@ -61,6 +61,7 @@ function autoReadSMS(cb) {
       } catch (err) {
         console.log(err);
       }
+      alert("hiii");
     }
   }
   main();
