@@ -38,7 +38,7 @@ function autoReadSMS(cb) {
             await navigator.credentials
               .get()
               .then((content) => {
-                alert("content");
+                alert(JSON.stringify(content));
                 if (content && content.code) {
                   alert(current?.code);
                   cb(content.code);
